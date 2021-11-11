@@ -10,21 +10,29 @@ on:
     branches: [ master ]
 
 jobs:
-  build:
+  build&test:
     runs-on: ubuntu-latest
     strategy:
       matrix:
         node-version: [14.x]
     steps:
-    - uses: actions/checkout@v2
+    - name: 'Checkout'
+      uses: actions/checkout@v2
+
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: npm ci
-    - run: npm run build --if-present
-    - run: npm test
+
+    - name: Clean install
+      run: npm ci
+
+    - name: 'Build'
+      run: npm run build --if-present
+
+    - name: 'Run unit tests'
+      run: npm test
 
   deploy:
     needs: build
