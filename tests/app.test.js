@@ -15,7 +15,7 @@ describe('Test the root path', () => {
 
 describe('Test the dog endpoints', () => {
     test('should response the GET method', async () => {
-        const response = await request(app).get('/dogg');
+        const response = await request(app).get('/dog');
         expect(response.statusCode).toBe(200);
     });
 })
