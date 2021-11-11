@@ -6,4 +6,9 @@ describe('Test the root path', () => {
         const response = await request(app).get("/");
         expect(response.statusCode).toBe(200);
     });
+
+    test('should send Hello World in the response', async () => {
+        const response = await request(app).get('/');
+        expect(response.text).toBe('Hello World');
+    });
 });
