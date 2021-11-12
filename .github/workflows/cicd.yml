@@ -36,6 +36,7 @@ jobs:
 
   cypress-run:
     runs-on: ubuntu-latest
+    needs: build_and_test
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -43,11 +44,10 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
-          build: npm run build
           start: npm start
 
   deploy:
-    needs: build_and_test
+    needs: [build_and_test, cypress-run]
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/master'
     steps:
