@@ -5,6 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "jest --runInBand",
+    "cy:run": "cypress run",
     "start": "node server.js"
   },
   "author": "",
@@ -15,6 +16,7 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
+    "cypress": "^9.0.0",
     "jest": "^27.3.1",
     "superagent": "^6.1.0",
     "supertest": "^6.1.6"
