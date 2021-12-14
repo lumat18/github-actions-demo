@@ -16,7 +16,7 @@ jobs:
         run: ls
 
   job2:
-    needs: List
+    needs: job1
     name: Say
     runs-on: ubuntu-latest
 
