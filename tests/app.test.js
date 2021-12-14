@@ -12,3 +12,10 @@ describe('Test the root path', () => {
         expect(response.text).toBe('Hello World');
     });
 });
+
+describe('Test the dog endpoints', () => {
+    test('should response the GET method', async () => {
+        const response = await request(app).get('/dog');
+        expect(response.statusCode).toBe(200);
+    });
+})
