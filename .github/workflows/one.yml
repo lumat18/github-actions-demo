@@ -1,0 +1,16 @@
+name: First action
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  job1:
+    name: Debug
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Git checkout
+        uses: actions/checkout@v2
+
+      - name: List files
+        run: ls
