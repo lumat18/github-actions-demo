@@ -11,6 +11,6 @@ jobs:
     steps:
     - name: Git checkout
       uses: actions/checkout@v2
-      with: { ref: master }
+      with: { ref: dog-endpoint }
     - name: List files
       run: ls
