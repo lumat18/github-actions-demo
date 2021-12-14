@@ -6,13 +6,14 @@ on:
       - completed
 
 jobs:
-  job2:
-    name: Debug
-    runs-on: ubuntu-latest
+  notify:
+    job2:
+      name: Debug
+      runs-on: ubuntu-latest
 
-    steps:
-      - name: Git checkout
-        uses: actions/checkout@v2
+      steps:
+        - name: Git checkout
+          uses: actions/checkout@v2
 
-      - name: List files
-        run: ls
+        - name: List files
+          run: ls
