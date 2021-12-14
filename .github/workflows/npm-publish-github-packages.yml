@@ -1,5 +1,5 @@
 name: Experiment
-on: 
+on:
   schedule:
   - cron: '0 * * * *'
 
@@ -11,6 +11,6 @@ jobs:
     steps:
     - name: Git checkout
       uses: actions/checkout@v2
-      with: { ref: dog-endpoint }
+      with: { ref: master }
     - name: List files
       run: ls
