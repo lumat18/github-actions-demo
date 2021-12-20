@@ -14,6 +14,10 @@ jobs:
 
       - name: List files
         run: ls
+
+      - name: Repository Dispatch
+        uses: peter-evans/repository-dispatch@v1
         with:
+          token: ${{ secrets.PAT }}
           event-type: my-event
-          client-payload: '{ "env": "staging" }'
+          client-payload: '{"env": "staging"}'
