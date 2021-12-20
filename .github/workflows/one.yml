@@ -15,4 +15,5 @@ jobs:
       - name: List files
         run: ls
         with:
+          event-type: my-event
           client-payload: '{ "env": "staging" }'

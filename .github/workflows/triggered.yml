@@ -1,9 +1,7 @@
 name: Triggered action
 on:
-  workflow_run:
-    workflows:  [ "First action" ]
-    types:
-      - completed
+  repository_dispatch:
+    types: [my-event]
 
 jobs:
   test-ui-staging:
