@@ -20,4 +20,4 @@ jobs:
         with:
           token: ${{ secrets.PAT }}
           event-type: my-event
-          client-payload: '{"env": "staging"}'
+          client-payload: '{"env": "production"}'

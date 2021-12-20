@@ -10,9 +10,6 @@ jobs:
     if: ${{ github.event.client_payload.env == 'staging' }}
 
     steps:
-      - name: Git checkout
-        uses: actions/checkout@v2
-
       - name: Say hello
         run: echo $ENV_VAR
         env:
@@ -24,9 +21,6 @@ jobs:
     if: ${{ github.event.client_payload.env == 'production' }}
 
     steps:
-      - name: Git checkout
-        uses: actions/checkout@v2
-
       - name: Say hello
         run: echo $ENV_VAR
         env:
