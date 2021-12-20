@@ -1,0 +1,35 @@
+name: Triggered action
+on:
+  workflow_run:
+    workflows:  [ "First action" ]
+    types:
+      - completed
+
+jobs:
+  test-ui-staging:
+    name: Test UI staging
+    runs-on: ubuntu-latest
+    if: ${{ github.event.client_payload == 'staging' }}
+
+    steps:
+      - name: Git checkout
+        uses: actions/checkout@v2
+
+      - name: Say hello
+        run: echo $ENV_VAR
+        env:
+          ENV_VAR: 'STAGING'
+
+  test-ui-prod:
+    name: Test UI production
+    runs-on: ubuntu-latest
+    if: ${{ github.event.client_payload == 'production' }}
+
+    steps:
+      - name: Git checkout
+        uses: actions/checkout@v2
+
+      - name: Say hello
+        run: echo $ENV_VAR
+        env:
+          ENV_VAR: 'PROD'

@@ -14,15 +14,5 @@ jobs:
 
       - name: List files
         run: ls
-
-  job2:
-    needs: job1
-    name: Say
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Git checkout
-        uses: actions/checkout@v2
-
-      - name: Say hello
-        run: echo 'Hello, world'
+        with:
+          client-payload: '{ "env": "staging" }'
